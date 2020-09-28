@@ -2,7 +2,7 @@ FROM node:alpine as docker_react_test_builder
 
 WORKDIR /app
 
-COPY package.json .
+COPY package*.json ./
 RUN npm install
 
 COPY . .
