@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:alpine as docker_react_test_builder
 
 WORKDIR /app
 
@@ -11,4 +11,4 @@ CMD ["npm", "run", "build"]
 
 FROM nginx
 EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=docker_react_test_builder /app/build /usr/share/nginx/html
